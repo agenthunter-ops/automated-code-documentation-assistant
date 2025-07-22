@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 version: "3.9"
 
 services:
@@ -22,3 +23,29 @@ services:
 volumes:
   mongo-data:
   redis-data:
+=======
+version: "3.9"
+
+services:
+  app:
+    build: .
+    ports: ["8000:8000"]
+    environment:
+      - MONGODB_URL=mongodb://mongo:27017
+      - REDIS_URL=redis://redis:6379/0
+    volumes:
+      - ./repos:/app/repos
+    depends_on: [mongo, redis]
+
+  mongo:
+    image: mongo:7
+    volumes: [mongo-data:/data/db]
+
+  redis:
+    image: redis:7-alpine
+    volumes: [redis-data:/data]
+
+volumes:
+  mongo-data:
+  redis-data:
+>>>>>>> b44a0d4ca2b1fc73d9ca1af3689b00da856d3e5a

@@ -1,4 +1,11 @@
+<<<<<<< HEAD
 __pycache__/
 *.py[cod]
 .env
 repos/
+=======
+__pycache__/
+*.py[cod]
+.env
+repos/
+>>>>>>> b44a0d4ca2b1fc73d9ca1af3689b00da856d3e5a
